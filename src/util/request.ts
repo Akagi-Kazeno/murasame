@@ -20,7 +20,7 @@ export const ToastErrorHandler = (error: ResponseError) => {
     uni.hideLoading();
     uni
       .showToast({
-        title: error.response?.data.message || '服务器走丢啦，请稍后再试',
+        title: error.response?.data.message || '服务器错误，请稍后再试',
         icon: 'none',
         duration: 2000,
       })
@@ -37,7 +37,7 @@ export const ModalErrorHandler = (
     uni.hideLoading();
     uni.showModal({
       title: '抱歉',
-      content: error.response?.data.message || '服务器走丢啦，请稍后再试',
+      content: error.response?.data.message || '服务器错误，请稍后再试',
       showCancel: false,
       success(result) {
         if (result.confirm) {
