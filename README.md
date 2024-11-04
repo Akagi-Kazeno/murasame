@@ -34,5 +34,5 @@ tsc .\uniVersionController.ts
 ## tips:
 
 1. ***更新时更改/src目录下的manifest.json中的versionName和versionCode***
-2. @dcloudio/types版本需单独更新
+2. @dcloudio/types, @dcloudio/uni-ui版本需单独更新
 3. font-weight不生效，小于等于345为thin，大于等于550为bold
