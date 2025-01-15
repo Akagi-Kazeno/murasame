@@ -5,7 +5,7 @@ import * as fs from 'fs';
  * uniapp版本控制器
  */
 // 指定的版本
-const newVersion = '3.0.0-4020920240930001';
+const newVersion = '3.0.0-4040520250104002';
 
 // 读取package.json文件
 const packageJsonPath = path.resolve(__dirname, 'package.json');

@@ -32,7 +32,8 @@ export const useCommonStore = defineStore('CommonStore', {
       remove('sessionKey', true);
       set({ key: 'sessionKey', data: sessionKey }, true);
     },
-    // 移除用户信息
+    // 移除用户信息(Kasugano-Sora) ~/Documents/Code/self/Kasugano-Sora git:[master]
+
     removeSessionKey() {
       remove('sessionKey', true);
       this.sessionKey = '';
