@@ -11,7 +11,6 @@ export const useCommonStore = defineStore('CommonStore', {
     sessionKey: get('sessionKey', true) as string,
     systemInfo: undefined as undefined | EnvInfo.SystemInfo,
     userInit: false,
-    areaList: [] as AreaType.AreaInfo[],
     appEnvInfo: undefined as undefined | EnvInfo.AppEnvInfo,
   }),
   getters: {
@@ -20,20 +19,13 @@ export const useCommonStore = defineStore('CommonStore', {
     isNotLogin: state => !state.userInfo?.token,
   },
   actions: {
-    // 设置地区列表
-    setAreaList(areaList: AreaType.AreaInfo[]) {
-      this.areaList = areaList;
-      remove('areaList', true);
-      set({ key: 'areaList', data: areaList }, true);
-    },
     // 设置SessionKey
     setSessionKey(sessionKey: string) {
       this.sessionKey = sessionKey;
       remove('sessionKey', true);
       set({ key: 'sessionKey', data: sessionKey }, true);
     },
-    // 移除用户信息(Kasugano-Sora) ~/Documents/Code/self/Kasugano-Sora git:[master]
-
+    // 移除SessionKey
     removeSessionKey() {
       remove('sessionKey', true);
       this.sessionKey = '';

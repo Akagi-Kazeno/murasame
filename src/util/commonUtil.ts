@@ -77,35 +77,6 @@ export function constructUrl(params: any, baseurl: string): string {
 }
 
 /**
- * @description: 显示城市
- *
- * @param city 城市
- * @return {string | undefined}
- */
-export function showCity(city: AreaType.CityInfo): string | undefined {
-  // 这三个地区的展示第三级具体直辖市
-  const banList: number[] = [419000, 429000, 469000];
-  let result: string | undefined = city?.city;
-  if (city?.cityCode) {
-    banList.map((code: number) => {
-      if (city.cityCode === code) {
-        result = city?.region;
-        return;
-      }
-    });
-    if (result) {
-      let i: number = result.indexOf('市');
-      if (i < 0) {
-        return result.length > 2 ? result.substring(0, 2) + '...' : result;
-      } else {
-        return result.replace('市', '');
-      }
-    }
-  }
-  return result;
-}
-
-/**
  * @description: 验证手机号
  *
  * @param phone 手机号
@@ -205,19 +176,6 @@ export function getDateAgo(days = 0, months = 0, years = 0): Date {
   date.setFullYear(date.getFullYear() - years);
   date.setHours(0, 0, 0, 0);
   return date;
-}
-
-/**
- * @description: 转换价格
- *
- * @param price 价格(分)
- * @return {string}
- */
-export function convertPrice(price: number): string {
-  if (price === 0) {
-    return '免费';
-  }
-  return (price / 100).toFixed(2) + '元';
 }
 
 /**
